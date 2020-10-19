@@ -83,3 +83,37 @@ $1$-edge connected = $1$-connected = connected
 If $G$ is a simple graph,then $κ(G) ≤ λ(G) ≤ δ(G)$（最小度）. 
 
 **Proof.**$κ(G) ≤ |T| ≤ |[S,\bar{S}]| = λ(G) ≤ δ(G)$
+
+### Characterization of 2-connected graphs
+
+Two paths from $u$ to $v$ are **internally disjoint** if they have no common internal vertex.
+
+A graph $G$ having at least three vertices is 2-connected if and only if for each pair $u, v ∈ V(G)$, there exist two internally disjoint $u, v$-paths in $G$.
+
+A graph $G$ having at least $k + 1$ vertices is $k$-connected if and only if for each pair $u, v ∈ V(G)$, there exist $k$ internally disjoint $u, v$-paths in $G$.
+
+A graph $G$ is $k$-edge-connected if and only if for each pair $u, v ∈ V(G)$, there exist $k$ edge disjoint $u, v$-paths in $G$.
+
+### Eluerian Trail
+
+A trail that traverses every edge of a graph is called an **Eulerian trail**. An **Eulerian circuit** is a closed Eulerian trail.
+
+### Eluerian Graph
+
+A graph which contains an Eulerian circuit is called an **Eulerian graph**. A graph which is not Eulerian, but contains an Eulerian trail is called a **semi-Eulerian graph**.
+
+A **connected** graph G is **Eulerian** if and only if the degree of each vertex of $G$ is even.
+
+A connected graph is Eulerian if and only if its set of edges can be split up into disjoint cycles.
+
+A connected graph is semi-Eulerian if and only if it has exactly two vertices of odd degree.
+
+### Fleury’s algorithm
+
+Let G be an Eulerian graph. Then the following construction is alwayspossible, and produces an Eulerian trail of G.
+
+Start at any vertex $u$ and traverse the edges in an arbitrary manner, subject only to the following rules:
+
+- erase the edges as they are traversed, and if any isolated vertices result, erase them too;
+
+- at each stage, use a bridge only if there is no alternative.
