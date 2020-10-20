@@ -110,10 +110,36 @@ A connected graph is semi-Eulerian if and only if it has exactly two vertices of
 
 ### Fleury’s algorithm
 
-Let G be an Eulerian graph. Then the following construction is alwayspossible, and produces an Eulerian trail of G.
+Let $G$ be an Eulerian graph. Then the following construction is alwayspossible, and produces an Eulerian trail of $G$.
 
 Start at any vertex $u$ and traverse the edges in an arbitrary manner, subject only to the following rules:
 
 - erase the edges as they are traversed, and if any isolated vertices result, erase them too;
-
 - at each stage, use a bridge only if there is no alternative.
+
+### Hamiltonian graphs
+
+A Hamiltonian cycle of $G$ is a cycle containing every vertex of $G$.
+
+A graph is Hamiltonian if it contains a Hamilton cycle.
+
+- $K_n$ is Hamiltonian for all $n ≥ 3$.
+- $K_{m,n}$ is Hamiltonian if and only if $m = n ≥ 2$.
+
+If $G$ and $H$ are Hamiltonian, then $G□H$ is Hamiltonian.
+
+Let $S$ be a proper nonempty set of vertices of a Hamiltonian graph $G$.Then $ω(G − S) ≤ |S|$.(Necessity)
+
+If $G$ is a simple graph with $n(≥ 3)$ vertices, and if $deg(v) + deg(w) ≥ n$ for each pair of non-adjacent vertices $v$ and $w$, then $G$ is Hamiltonian.
+
+If $G$ is a simple graph with $n(≥ 3)$ vertices, and if $deg(v) ≥ \frac{n}{2}$ for each vertex $v$, then $G$ is Hamiltonian.
+
+### Dijkstra algorithm
+
+### The Chinese postman problem, Mei-Ku Kwan, 1960
+
+A postman wishes to deliver his letters, covering the least possible total distance and returning to his starting point. He must obviously traverse each road in his route at least once .
+
+The $G^∗$ has the minimum weight Eulerian circuit if and only if:
+- Each edge of $G$ can be added to $G^∗$ at most once;
+- For every cycle C of $G^∗$, $\displaystyle\sum^{}_{e \in {E_1 \cap E(C)}}w(e) ≤ \displaystyle\sum^{}_{e \in {E_1 \setminus E(C)}}w(e)$.
